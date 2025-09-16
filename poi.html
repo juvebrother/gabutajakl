@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kejutan Ultah Rendy ❤ Ina</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ff6b6b, #ffa502);
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 15px 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-weight: bold;
+      width: 90%;
+      max-width: 300px;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .section {
+      display: none;
+      animation: fadeIn 0.8s ease-in;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .cake {
+      font-size: 4em;
+      margin: 15px 0;
+      animation: bounce 2s infinite;
+    }
+
+    .heart {
+      color: #ff6b6b;
+      font-size: 1.2em;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin: 15px 0;
+      line-height: 1.5;
+    }
+
+    .love-message {
+      font-size: 1.3em;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .couple-image {
+      font-size: 5em;
+      margin: 15px 0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      font-size: 0.9em;
+      padding: 5px;
+    }
+
+    /* Confetti Effect */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      opacity: 0.7;
+      animation: fall linear forwards;
+      top: -10px;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Final Message Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 90%;
+      max-height: 80%;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalFadeIn 0.5s ease-in;
+    }
+
+    .modal-message {
+      font-size: 1.4em;
+      margin: 20px 0;
+      line-height: 1.6;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .close-btn {
+      background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+      
+      .btn {
+        font-size: 1em;
+        padding: 10px 15px;
+        width: 95%;
+      }
+      
+      .cake {
+        font-size: 3.5em;
+      }
+      
+      .couple-image {
+        font-size: 4em;
+      }
+      
+      .message {
+        font-size: 1.1em;
+      }
+      
+      .love-message {
+        font-size: 1.2em;
+      }
+      
+      .modal-content {
+        padding: 20px;
+      }
+      
+      .modal-message {
+        font-size: 1.2em;
+      }
+    }
+
+    @media (max-width: 320px) {
+      h1 {
+        font-size: 1.3em;
+      }
+      
+      .btn {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+      
+      .cake {
+        font-size: 3em;
+      }
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.2em;
+      }
+      
+      .btn {
+        font-size: 1.3em;
+        padding: 15px 25px;
+        width: 80%;
+      }
+      
+      .cake {
+        font-size: 5em;
+      }
+      
+      .couple-image {
+        font-size: 6em;
+      }
+      
+      .message {
+        font-size: 1.4em;
+      }
+      
+      .love-message {
+        font-size: 1.6em;
+      }
+      
+      .modal-message {
+        font-size: 1.6em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Start Section -->
+    <div id="startSection" class="section" style="display: block;">
+      <h1>Untuk Rendy Refaldy</h1>
+      <button class="btn" onclick="showBirthday()">Klik</button>
+    </div>
+
+    <!-- Birthday Section -->
+    <div id="birthdaySection" class="section">
+      <div class="cake">🎂</div>
+      <div class="message">
+        <p>Selamat ulang tahun yang ke-14, <strong>Rendy</strong>! 🥳</p>
+        <p>Semoga panjang umur, sehat selalu, dan makin pinter ya 🔥</p>
+        <p>Thank ya udh jadi teman terbaik ku</p>
+      </div>
+      <button class="btn" onclick="showLoveButton()">Pencet</button>
+    </div>
+
+    <!-- Love Button Section -->
+    <div id="loveButtonSection" class="section">
+      <div class="message">
+        <p>Siap-siap ya... kejutan spesial sedang menunggu! 🎁</p>
+        <p>Ini adalah kejutan yang sangat spesial buat kamu, Rendy!</p>
+      </div>
+      <button class="btn" onclick="showLove()" style="background: linear-gradient(45deg, #ff6b6b, #ff4757);">
+        Pencet Coba
+      </button>
+    </div>
+
+    <!-- Love Section -->
+    <div id="loveSection" class="section">
+      <div class="couple-image">💕</div>
+      <div class="love-message">
+        <p><strong>RENDY ❤ INAA</strong></p>
+        <p>Selamanya dan selalu 💖</p>
+        <p>Kamu spesial banget buat Aku 😘</p>
+        <p>Mau gak kamu Jadi pacar ku 😊</p>
+        <p>Rendy + Ina = Forever 💕</p>
+      </div>
+      <div style="font-size: 4em; animation: heartbeat 1.5s infinite;">❤️</div>
+      <button class="btn" onclick="showFinalMessage()">Pesan Spesial untuk Kalian Berdua</button>
+    </div>
+  </div>
+
+  <!-- Final Message Modal -->
+  <div id="finalModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-message">
+        <h2>💕 PESAN SPESIAL 💕</h2>
+        <p><strong>Rendy ❤ INAA SELAMANYA!</strong></p>
+        <p>aku mau nyamapain sesuatu ke kamu ina 🥰</p>
+        <p>Aku Sebener nya udh S.u.k.a ama kamu dari kelas 8 kamu itu baik dan cantik sehingga aku tertarik dengan mu 🥰</p>
+        <p>kamu mau gak jadi pacar ku? 🥰</p>
+        <p>Dari Rendy</p>
+        <p>💕💕💕</p>
+        <button class="btn close-btn" onclick="closeModal()">Tutup Pesan</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showBirthday() {
+      document.getElementById('startSection').style.display = 'none';
+      document.getElementById('birthdaySection').style.display = 'block';
+      createConfetti();
+    }
+
+    function showLoveButton() {
+      document.getElementById('birthdaySection').style.display = 'none';
+      document.getElementById('loveButtonSection').style.display = 'block';
+      createConfetti();
+    }
+
+    function showLove() {
+      document.getElementById('loveButtonSection').style.display = 'none';
+      document.getElementById('loveSection').style.display = 'block';
+      createConfetti();
+    }
+
+    function showFinalMessage() {
+      document.getElementById('finalModal').style.display = 'flex';
+      createConfetti();
+    }
+
+    function closeModal() {
+      document.getElementById('finalModal').style.display = 'none';
+      createConfetti();
+    }
+
+    function createConfetti() {
+      const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#ff6b6b'];
+      const container = document.body;
+      
+      // Create fewer confetti for mobile performance
+      const confettiCount = window.innerWidth < 768 ? 80 : 150;
+      
+      for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.width = Math.random() * 6 + 4 + 'px';
+        confetti.style.height = confetti.style.width;
+        confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+        confetti.style.animationDelay = Math.random() * 1 + 's';
+        
+        container.appendChild(confetti);
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+          if (confetti.parentNode) {
+            confetti.remove();
+          }
+        }, 4000);
+      }
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      // Clean up existing confetti on resize
+      const confettis = document.querySelectorAll('.confetti');
+      confettis.forEach(confetti => confetti.remove());
+    });
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('finalModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
